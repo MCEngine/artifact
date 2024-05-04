@@ -15,6 +15,7 @@
                 "workbench.colorTheme": "Default Dark Modern" // Dark Modern
             },
             "extensions": [
+                "GitHub.copilot", // Github Copilot
                 "alefragnani.bookmarks", // Booke Marks
                 "vscjava.vscode-java-pack", // Java pack
                 "redhat.java", // RedHat
