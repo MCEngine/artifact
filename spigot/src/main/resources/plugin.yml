@@ -1,0 +1,5 @@
+name: MCEngineArtifact
+version: 1.0.0
+main: com.github.mcengine.MCEngineArtifact
+author: MCEngine
+description: Items with abilities
