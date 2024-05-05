@@ -6,6 +6,8 @@ public class MCEngineArtifact extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Register our command
+        this.getCommand("ashar").setExecutor(new asharCommand());
     }
 
     @Override
