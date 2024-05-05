@@ -21,7 +21,7 @@ public class asharItem {
         meta.setLore(Arrays.asList(
             ChatColor.WHITE + "This is a powerful sword",
             ChatColor.RED + "It can slay any enemy"
-            ));
+        ));
 
         item.setItemMeta(meta);
 
