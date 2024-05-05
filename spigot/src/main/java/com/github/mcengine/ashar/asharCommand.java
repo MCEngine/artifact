@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class command implements CommandExecutor{
+public class asharCommand implements CommandExecutor{
     @Override
     public void onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         // Check if sender is a player
