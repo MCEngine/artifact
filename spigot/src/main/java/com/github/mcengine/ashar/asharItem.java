@@ -8,7 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.entity.Player;
 
-public class item {
+public class asharItem {
     public static itemStack sword;
 
     public static ItemStack sword() {
