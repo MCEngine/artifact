@@ -32,7 +32,7 @@ public class command implements CommandExecutor{
         // Check if arg[0] == "get" and arg[1] == "sword"
         if (args[0].equalsIgnoreCase("get") && args[1].equalsIgnoreCase("sword")) {
             Player player = (Player) sender;
-            player.getInventory().addItem(item.sword);
+            player.getInventory().addItem(asharItem.sword);
             return;
         }
 
