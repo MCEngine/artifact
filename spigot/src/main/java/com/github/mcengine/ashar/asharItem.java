@@ -9,7 +9,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.entity.Player;
 
 public class asharItem {
-    public static itemStack sword;
+    public static ItemStack sword;
 
     public static ItemStack sword() {
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
