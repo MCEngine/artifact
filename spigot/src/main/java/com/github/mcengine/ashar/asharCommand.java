@@ -29,11 +29,29 @@ public class asharCommand implements CommandExecutor{
             return true;
         }
 
+        Player player = (Player) sender;
         // Check if arg[0] == "get" and arg[1] == "sword"
-        if (args[0].equalsIgnoreCase("get") && args[1].equalsIgnoreCase("sword")) {
-            Player player = (Player) sender;
-            player.getInventory().addItem(asharItem.sword);
-            return true;
+        if (args.length >= 2 && args[0].equalsIgnoreCase("get")) {
+            String itemType = args[1].toLowerCase();
+            switch (itemType) {
+            case "sword":
+                player.getInventory().addItem(asharItem.sword);
+                return true;
+            case "swordmaterialx":
+                player.getInventory().addItem(asharItem.swordMaterialX);
+                return true;
+            case "swordmaterialy":
+                player.getInventory().addItem(asharItem.swordMaterialY);
+                return true;
+            case "swordmaterialz":
+                player.getInventory().addItem(asharItem.swordMaterialZ);
+                return true;
+            default:
+                sender.sendMessage(ChatColor.RED + "Invalid item type!");
+                return true;
+            }
+        } else {
+            sender.sendMessage(ChatColor.RED + "Usage: /ashar get <itemType>");
         }
 
         return true;

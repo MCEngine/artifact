@@ -12,6 +12,9 @@ public class MCEngineArtifact extends JavaPlugin {
     public void onEnable() {
         // Register our item
         asharItem.sword();
+        asharItem.swordMaterialX();
+        asharItem.swordMaterialY();
+        asharItem.swordMaterialZ();
         // Register our command
         getCommand("ashar").setExecutor(new asharCommand());
         // Register our listener
