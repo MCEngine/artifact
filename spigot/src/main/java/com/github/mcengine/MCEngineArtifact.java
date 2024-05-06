@@ -13,6 +13,8 @@ public class MCEngineArtifact extends JavaPlugin {
         asharItem.sword();
         // Register our command
         getCommand("ashar").setExecutor(new asharCommand());
+        // Register our listener
+        getServer().getPluginManager().registerEvents(new asharListener(), this);
     }
 
     @Override
