@@ -25,7 +25,7 @@ public class asharCommand implements CommandExecutor{
 
         // Check arguments range
         if (args.length < 1) {
-            sender.sendMessage(ChatColor.RED + "Usage: /ashar get <itemType>");
+            sender.sendMessage(ChatColor.RED + help());
             return true;
         }
 
@@ -51,9 +51,13 @@ public class asharCommand implements CommandExecutor{
                 return true;
             }
         } else {
-            sender.sendMessage(ChatColor.RED + "Usage: /ashar get <itemType>");
+            sender.sendMessage(ChatColor.RED + help());
         }
 
         return true;
+    }
+
+    public static String help() {
+        return "Usage: /ashar <get> <item>";
     }
 }
