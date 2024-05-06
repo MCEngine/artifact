@@ -2,6 +2,7 @@ package com.github.mcengine.ashar;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
@@ -14,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.event.block.Action;
 
 public class asharListener implements Listener {
-    private final Map<Player, Long> cooldowns = new HashMap<>();
+    private final Map<UUID, Long> cooldowns = new HashMap<>();
     private final long cooldownDuration = 5000; // 5 seconds in milliseconds
 
     // If player right click item name ChatColor.GOLD + "Sword of the God"
@@ -23,8 +24,9 @@ public class asharListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        if (hasCooldown(player)) {
-            long remainingTime = getRemainingCooldown(player);
+        UUID playerUUID = player.getUniqueId();
+        if (hasCooldown(playerUUID)) {
+            long remainingTime = getRemainingCooldown(playerUUID);
             player.sendMessage(ChatColor.YELLOW + "Cooldown remaining: " + remainingTime + " milliseconds");
             return;
         }
@@ -41,27 +43,27 @@ public class asharListener implements Listener {
                 ((LivingEntity) entity).damage(5);
             }
         }
-        setCooldown(player);
+        setCooldown(playerUUID);
     }
 
-    private boolean hasCooldown(Player player) {
-        if (cooldowns.containsKey(player)) {
-            long cooldownTime = cooldowns.get(player);
+    private boolean hasCooldown(UUID playerUUID) {
+        if (cooldowns.containsKey(playerUUID)) {
+            long cooldownTime = cooldowns.get(playerUUID);
             if (System.currentTimeMillis() < cooldownTime + cooldownDuration) {
                 return true;
             } else {
-                cooldowns.remove(player);
+                cooldowns.remove(playerUUID);
             }
         }
         return false;
     }
 
-    private void setCooldown(Player player) {
-        cooldowns.put(player, System.currentTimeMillis());
+    private void setCooldown(UUID playerUUID) {
+        cooldowns.put(playerUUID, System.currentTimeMillis());
     }
 
-    private long getRemainingCooldown(Player player) {
-        long cooldownTime = cooldowns.get(player);
+    private long getRemainingCooldown(UUID playerUUID) {
+        long cooldownTime = cooldowns.get(playerUUID);
         long currentTime = System.currentTimeMillis();
         long remainingTime = cooldownTime + cooldownDuration - currentTime;
         return Math.max(0, remainingTime);
