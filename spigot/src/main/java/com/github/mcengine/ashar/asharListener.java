@@ -16,7 +16,7 @@ import org.bukkit.event.block.Action;
 
 public class asharListener implements Listener {
     private final Map<UUID, Long> cooldowns = new HashMap<>();
-    private final long cooldownDuration = 5000; // 5 seconds in milliseconds
+    private final long cooldownDuration = 15000; // 15 seconds in milliseconds
 
     // If player right click item name ChatColor.GOLD + "Sword of the God"
     // It will send message to player Lightining Strike
@@ -40,7 +40,7 @@ public class asharListener implements Listener {
         player.getWorld().strikeLightning(player.getLocation());
         for (Entity entity : player.getNearbyEntities(5, 5, 5)) {
             if (entity instanceof LivingEntity && entity != player) {
-                ((LivingEntity) entity).damage(5);
+                ((LivingEntity) entity).damage(40);
             }
         }
         setCooldown(playerUUID);
