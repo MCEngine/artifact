@@ -26,7 +26,7 @@ public class asharListener implements Listener {
         player.sendMessage(ChatColor.RED + "Lightning Strike!");
         player.getWorld().strikeLightning(player.getLocation());
         for (Entity entity : player.getNearbyEntities(5, 5, 5)) {
-            if (entity instanceof LivingEntity) {
+            if (entity instanceof LivingEntity && entity != player) {
                 ((LivingEntity) entity).damage(5);
             }
         }
