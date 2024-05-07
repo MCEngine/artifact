@@ -5,7 +5,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
+import com.github.mcengine.items.manager;
 import com.github.mcengine.items.asharItem;
 
 public class asharCommand implements CommandExecutor{
@@ -32,14 +34,13 @@ public class asharCommand implements CommandExecutor{
         Player player = (Player) sender;
         // Check if arg[0] == "get" and arg[1] == "sword"
         if (args.length >= 2 && args[0].equalsIgnoreCase("get")) {
-            String itemType = args[1].toLowerCase();
-            switch (itemType) {
-            case "sword":
-                player.getInventory().addItem(asharItem.sword);
-                return true;
-            default:
-                sender.sendMessage(ChatColor.RED + "Invalid item type!");
-                return true;
+            ItemStack item = manager.getItem("ashar", args[1]);
+
+            if (item != null) {
+                player.getInventory().addItem(item);
+                player.sendMessage(ChatColor.GREEN + "You have received " + item + "!");
+            } else {
+                player.sendMessage(ChatColor.RED + "Item not found!");
             }
         } else {
             sender.sendMessage(ChatColor.RED + help());
