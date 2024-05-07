@@ -2,9 +2,10 @@ package com.github.mcengine;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.github.mcengine.items.material;
+
 import com.github.mcengine.commands.asharCommand;
 import com.github.mcengine.items.asharItem;
-import com.github.mcengine.items.material;
 import com.github.mcengine.listeners.asharListener;
 
 public class MCEngineArtifact extends JavaPlugin {
