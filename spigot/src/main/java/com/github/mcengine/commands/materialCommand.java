@@ -1,10 +1,14 @@
 package com.github.mcengine.commands;
 
+import java.util.ArrayList;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import com.github.mcengine.items.material;
 
@@ -30,22 +34,15 @@ public class materialCommand implements CommandExecutor{
         }
 
         Player player = (Player) sender;
-        // Check if arg[0] == "get" and arg[1] == "gezhange" or "hezh" or "rexgum
+
         if (args.length >= 2 && args[0].equalsIgnoreCase("get")) {
-            String itemType = args[1].toLowerCase();
-            switch (itemType) {
-            case "gezhange":
-                player.getInventory().addItem(material.gezhange);
-                return true;
-            case "hezh":
-                player.getInventory().addItem(material.hezh);
-                return true;
-            case "rexgum":
-                player.getInventory().addItem(material.rexgum);
-                return true;
-            default:
-                sender.sendMessage(ChatColor.RED + "Invalid item type!");
-                return true;
+            ItemStack item = material.getItem(args[1]);
+
+            if (item != null) {
+                player.getInventory().addItem(item);
+                player.sendMessage(ChatColor.GREEN + "You have received " + item + "!");
+            } else {
+                player.sendMessage(ChatColor.RED + "Item not found!");
             }
         } else {
             sender.sendMessage(ChatColor.RED + help());
