@@ -1,4 +1,4 @@
-package com.github.mcengine.ashar;
+package com.github.mcengine.items.ashar;
 
 import java.util.Arrays;
 

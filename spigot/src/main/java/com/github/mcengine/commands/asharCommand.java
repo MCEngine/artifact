@@ -1,4 +1,4 @@
-package com.github.mcengine.ashar;
+package com.github.mcengine.commands.ashar;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
