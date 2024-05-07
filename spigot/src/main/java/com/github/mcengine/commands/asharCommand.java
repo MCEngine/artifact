@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.github.mcengine.items.manager;
+import com.github.mcengine.items.managerItem;
 import com.github.mcengine.items.asharItem;
 
 public class asharCommand implements CommandExecutor{
@@ -34,7 +34,7 @@ public class asharCommand implements CommandExecutor{
         Player player = (Player) sender;
         // Check if arg[0] == "get" and arg[1] == "sword"
         if (args.length >= 2 && args[0].equalsIgnoreCase("get")) {
-            ItemStack item = manager.getItem("ashar", args[1]);
+            ItemStack item = managerItem.getItem("asharItem", args[1]);
 
             if (item != null) {
                 player.getInventory().addItem(item);

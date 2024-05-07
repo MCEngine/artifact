@@ -3,7 +3,7 @@ package com.github.mcengine.items;
 import java.lang.reflect.Method;
 import org.bukkit.inventory.ItemStack;
 
-public class manager {
+public class managerItem {
     public static ItemStack getItem(String className, String item) {
         try {
             Class<?> clazz = Class.forName("com.github.mcengine.items." + className);

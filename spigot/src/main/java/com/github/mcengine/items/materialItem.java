@@ -5,7 +5,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.Material;
 
-public class material {
+public class materialItem {
     public static ItemStack gezhange;
     public static ItemStack hezh;
     public static ItemStack rexgum;

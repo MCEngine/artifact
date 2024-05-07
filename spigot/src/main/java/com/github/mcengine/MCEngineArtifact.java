@@ -2,7 +2,7 @@ package com.github.mcengine;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.mcengine.items.material;
+import com.github.mcengine.items.materialItem;
 import com.github.mcengine.commands.materialCommand;
 
 import com.github.mcengine.commands.asharCommand;
@@ -17,9 +17,9 @@ public class MCEngineArtifact extends JavaPlugin {
         // Register items, commands, listeners //
         ////////////////////////////////////////
         // material
-        material.gezhange();
-        material.hezh();
-        material.rexgum();
+        materialItem.gezhange();
+        materialItem.hezh();
+        materialItem.rexgum();
         getCommand("material").setExecutor(new materialCommand());
 
         // ashar

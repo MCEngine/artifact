@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.github.mcengine.items.manager;
-import com.github.mcengine.items.material;
+import com.github.mcengine.items.managerItem;
+import com.github.mcengine.items.materialItem;
 
 public class materialCommand implements CommandExecutor{
     @Override
@@ -37,7 +37,7 @@ public class materialCommand implements CommandExecutor{
         Player player = (Player) sender;
 
         if (args.length >= 2 && args[0].equalsIgnoreCase("get")) {
-            ItemStack item = manager.getItem("material", args[1]);
+            ItemStack item = managerItem.getItem("materialItem", args[1]);
 
             if (item != null) {
                 player.getInventory().addItem(item);
