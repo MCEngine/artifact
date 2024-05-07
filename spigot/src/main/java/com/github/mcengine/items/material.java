@@ -1,5 +1,10 @@
 package com.github.mcengine.items;
 
+import org.bukkit.ChatColor;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.Material;
+
 public class Material {
     public static ItemStack gezhange;
     public static ItemStack hezh;
