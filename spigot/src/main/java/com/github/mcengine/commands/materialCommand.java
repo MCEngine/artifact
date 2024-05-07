@@ -30,7 +30,7 @@ public class materialCommand implements CommandExecutor{
         }
 
         Player player = (Player) sender;
-        // Check if arg[0] == "get" and arg[1] == "sword"
+        // Check if arg[0] == "get" and arg[1] == "gezhange" or "hezh" or "rexgum
         if (args.length >= 2 && args[0].equalsIgnoreCase("get")) {
             String itemType = args[1].toLowerCase();
             switch (itemType) {
