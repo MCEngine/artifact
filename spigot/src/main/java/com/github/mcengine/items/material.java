@@ -45,4 +45,17 @@ public class material {
 
         return rexgum = item;
     }
+
+    public static ItemStack getItem(String item) {
+        switch (item) {
+            case "gezhange":
+                return gezhange;
+            case "hezh":
+                return hezh;
+            case "rexgum":
+                return rexgum;
+            default:
+                return null;
+        }
+    }
 }
