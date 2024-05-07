@@ -13,9 +13,6 @@ import org.bukkit.event.EventHandler;
 
 public class asharItem {
     public static ItemStack sword;
-    public static ItemStack swordMaterialX;
-    public static ItemStack swordMaterialY;
-    public static ItemStack swordMaterialZ;
 
     public static ItemStack sword() {
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
@@ -35,42 +32,5 @@ public class asharItem {
         item.setItemMeta(meta);
 
         return sword = item;
-    }
-
-    // Create item with HeadDatabaseAPI 84072
-    public static ItemStack swordMaterialX() {
-        ItemStack item = new ItemStack(Material.DIAMOND);
-
-        ItemMeta meta = item.getItemMeta();
-
-        meta.setDisplayName(ChatColor.GOLD + "Material");
-
-        item.setItemMeta(meta);
-
-        return swordMaterialX = item;
-    }
-
-    public static ItemStack swordMaterialY() {
-        ItemStack item = new ItemStack(Material.DIAMOND);
-
-        ItemMeta meta = item.getItemMeta();
-
-        meta.setDisplayName(ChatColor.GOLD + "Material");
-
-        item.setItemMeta(meta);
-
-        return swordMaterialY = item;
-    }
-
-    public static ItemStack swordMaterialZ() {
-        ItemStack item = new ItemStack(Material.DIAMOND);
-
-        ItemMeta meta = item.getItemMeta();
-
-        meta.setDisplayName(ChatColor.GOLD + "Material");
-
-        item.setItemMeta(meta);
-
-        return swordMaterialZ = item;
     }
 }
