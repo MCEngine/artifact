@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.github.mcengine.ashar.asharItem;
+import com.github.mcengine.items.asharItem;
 
 public class asharCommand implements CommandExecutor{
     @Override
