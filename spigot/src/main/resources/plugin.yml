@@ -5,6 +5,12 @@ author: MCEngine
 description: Items with abilities
 depend: [HeadDatabase]
 commands:
+  material:
+    description: "material command"
+    usage: "/<command> <arg0> <arg1>"
+    permission: "material.command"
+    aliases:
+      - material
   ashar: 
     description: "ashar command"
     usage: "/<command> <arg0>"
