@@ -14,9 +14,11 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.event.block.Action;
 
+import com.github.mcengine.listeners.managerListener;
+
 public class asharListener implements Listener {
-    private final Map<UUID, Long> cooldowns = new HashMap<>();
-    private final long cooldownDuration = 15000; // 15 seconds in milliseconds
+    public final Map<UUID, Long> cooldowns = new HashMap<>();
+    public final long cooldownDuration = 15000; // 15 seconds in milliseconds
 
     // If player right click item name ChatColor.GOLD + "Sword of the God"
     // It will send message to player Lightining Strike
@@ -25,8 +27,8 @@ public class asharListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         UUID playerUUID = player.getUniqueId();
-        if (hasCooldown(playerUUID)) {
-            long remainingTime = getRemainingCooldown(playerUUID);
+        if (managerListener.hasCooldown(playerUUID, cooldowns, cooldownDuration)) {
+            long remainingTime = managerListener.getRemainingCooldown(playerUUID, cooldowns, cooldownDuration);
             player.sendMessage(ChatColor.YELLOW + "Cooldown remaining: " + remainingTime + " milliseconds");
             return;
         }
@@ -43,6 +45,6 @@ public class asharListener implements Listener {
                 ((LivingEntity) entity).damage(40);
             }
         }
-        setCooldown(playerUUID);
+        managerListener.setCooldown(playerUUID, cooldowns);
     }
 }
